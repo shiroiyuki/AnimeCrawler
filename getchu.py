@@ -41,11 +41,11 @@ def makedir(soup):
             os.mkdir(dir)
         try:
             title = soup.find('meta',{"name":"keywords"})['content'].replace('～','')
-            title = soup.find('meta',{"name":"keywords"})['content'].replace('～','')
-            title = soup.find('meta',{"name":"keywords"})['content'].replace('?','')
-            title = soup.find('meta',{"name":"keywords"})['content'].replace('+','')
-            title = soup.find('meta',{"name":"keywords"})['content'].replace('-','')
-            title = soup.find('meta',{"name":"keywords"})['content'].replace(' ','')
+            title = title.replace('～','')
+            title = title.replace('?','')
+            title = title.replace('+','')
+            title = title.replace('-','')
+            title = title.replace(' ','')
             title, company = title.split(',')
             dir = os.path.join(dir,company)
             if os.path.exists(dir) is False:
