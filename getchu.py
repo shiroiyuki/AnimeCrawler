@@ -40,6 +40,11 @@ def makedir(soup):
         if os.path.exists(dir) is False:
             os.mkdir(dir)
         try:
+            title = soup.find('meta',{"name":"keywords"})['content'].replace('～','')
+            title = soup.find('meta',{"name":"keywords"})['content'].replace('～','')
+            title = soup.find('meta',{"name":"keywords"})['content'].replace('?','')
+            title = soup.find('meta',{"name":"keywords"})['content'].replace('+','')
+            title = soup.find('meta',{"name":"keywords"})['content'].replace('-','')
             title = soup.find('meta',{"name":"keywords"})['content'].replace(' ','')
             title, company = title.split(',')
             dir = os.path.join(dir,company)
